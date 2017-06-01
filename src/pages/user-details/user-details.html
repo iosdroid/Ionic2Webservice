@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-capitalize>{{login}}'s details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cards-bg social-cards">
+ <ion-card>
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="user?.avatar_url">
+    </ion-avatar>
+    <h2 text-uppercase>{{login}}</h2>
+    <p>{{user?.created_at |  date:'MM/dd/yyyy'}}</p>
+  </ion-item>
+
+  <img [src]="user?.avatar_url">
+
+  <ion-card-content>
+    <p>{{user?.name}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="people"></ion-icon>
+        <div>{{user?.followers}} Followers</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="person"></ion-icon>
+        <div>{{user?.following}} following</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+       {{user?.updated_at | timeAgo}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-card>
+</ion-content>
+
